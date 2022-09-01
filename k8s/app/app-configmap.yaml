@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: soumen-app-config
+  labels:
+    app: soumen-app-config
+data:
+  POSTGRES_URL: r2dbc:postgresql://admin:passw0rd@postgres:5432/soumen_db

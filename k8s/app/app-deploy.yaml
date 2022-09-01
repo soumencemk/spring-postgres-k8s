@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: soumen-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: soumen-app
+  template:
+    metadata:
+      labels:
+        app: soumen-app
+    spec:
+      containers:
+        - name: soumen-app
+          image: itssoumen/spring-postgres-k8s
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: soumen-app-config

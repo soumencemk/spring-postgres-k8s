@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: soumen-app
+  labels:
+    app: soumen-app
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+  selector:
+    app: soumen-app
