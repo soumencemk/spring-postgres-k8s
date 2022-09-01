@@ -16,7 +16,7 @@ WORKDIR /tmp/target
 RUN java -Djarmode=layertools -jar *.jar extract
 
 # runtime image
-FROM gcr.io/distroless/java:17 as runtime
+FROM gcr.io/distroless/java:11 as runtime
 
 USER nonroot:nonroot
 WORKDIR /application

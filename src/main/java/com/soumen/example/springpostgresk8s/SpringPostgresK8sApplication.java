@@ -1,7 +1,9 @@
 package com.soumen.example.springpostgresk8s;
 
 import io.r2dbc.spi.ConnectionFactory;
+import lombok.Builder;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.ApplicationRunner;
@@ -81,7 +83,13 @@ interface EmployeeRepository extends R2dbcRepository<Employee, Long> {
     Mono<Employee> findByName(String name);
 }
 
-record Employee(@Id Long id, String name) {
+
+@Value
+@Builder
+class Employee {
+    @Id
+    Long id;
+    String name;
 }
 
 
