@@ -1,0 +1,7 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://postgres:postgres@localhost:5432/postgres
+logging:
+  level:
+    org.springframework.r2dbc: DEBUG
+
